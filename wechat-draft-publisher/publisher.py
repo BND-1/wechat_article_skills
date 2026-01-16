@@ -565,26 +565,44 @@ class WeChatPublisher:
             content
         )
 
-        # === 圆角优化：让所有框都圆润 ===
-        # 1. 将 border-collapse: collapse 改为 separate（允许圆角）
-        content = re.sub(
-            r'border-collapse:\s*collapse;',
-            'border-collapse:separate;border-spacing:0;overflow:hidden!important;',
-            content
-        )
+        # === 圆角优化：只给卡片表格（单行无<th>的表格）添加圆角 ===
+        # 1. 将 border-collapse: collapse 改为 separate（允许圆角）- 只对卡片表格
+        # 数据表格（含<th>）保持 collapse 不变
 
-        # 2. 给所有表格添加圆角（直接在<table style="后面添加）
-        content = re.sub(
-            r'<table\s+style="',
-            '<table style="border-radius:10px!important;',
-            content
-        )
+        def add_rounded_corners_to_card_tables(match):
+            """只给卡片表格（不含<th>的表格）添加圆角"""
+            table_html = match.group(0)
+            # 如果表格包含 <th>（数据表格），不添加圆角
+            if '<th' in table_html.lower():
+                return table_html
+            # 卡片表格：添加圆角
+            table_html = table_html.replace(
+                'border-collapse: collapse;',
+                'border-collapse:separate;border-spacing:0;overflow:hidden!important;'
+            ).replace(
+                'border-collapse:collapse;',
+                'border-collapse:separate;border-spacing:0;overflow:hidden!important;'
+            )
+            # 给table添加圆角
+            table_html = re.sub(
+                r'<table\s+style="',
+                '<table style="border-radius:10px!important;',
+                table_html
+            )
+            # 给td添加圆角
+            table_html = re.sub(
+                r'(<td\s+style="[^"]*)(">)',
+                r'\1border-radius:10px!important;\2',
+                table_html
+            )
+            return table_html
 
-        # 3. 给所有td也添加圆角（保证内外都圆润）
+        # 匹配完整的表格并处理
         content = re.sub(
-            r'(<td\s+style="[^"]*)(">)',
-            r'\1border-radius:10px!important;\2',
-            content
+            r'<table[^>]*>.*?</table>',
+            add_rounded_corners_to_card_tables,
+            content,
+            flags=re.DOTALL | re.IGNORECASE
         )
 
         # 4. 去除相关资源部分的边框（让结尾更简洁）

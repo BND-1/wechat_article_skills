@@ -8,11 +8,24 @@
 
 ## 📖 项目简介
 
-一套强大的微信公众号文章Skills工具集，涵盖 **AI写作助手**、**文章格式化** 和 **草稿发布** 三大核心功能。帮助你高效地创作、美化和发布微信公众号文章。
+一套强大的微信公众号文章Skills工具集，涵盖 **AI写作助手（技术/产品视角）**、**文章格式化** 和 **草稿发布** 四大核心功能。帮助你高效地创作、美化和发布微信公众号文章。
 
 ## ✨ 核心工具
 
-### 1️⃣ WeChat Tech Writer - AI 技术写作助手
+### 1️⃣ WeChat Product Manager Writer - AI 产品经理写作助手
+从 AI 产品经理视角撰写文章。涵盖 AI 产品拆解、场景解决方案、效率提升实战、产品方法论、行业观察。
+
+**核心特性：**
+- 🤖 产品思维驱动写作
+- 📊 强制生成内容结构图（信息图）
+- 🎨 强制生成专业文章封面
+- 🎯 实战场景导向，非纯技术教程
+
+[📚 详细文档](./wechat-product-manager-writer/SKILL.md)
+
+---
+
+### 2️⃣ WeChat Tech Writer - AI 技术写作助手
 基于 AI 的智能技术文章写作工具，快速生成高质量技术内容。
 
 **核心特性：**
@@ -25,7 +38,7 @@
 
 ---
 
-### 2️⃣ WeChat Article Formatter - 文章格式化工具
+### 3️⃣ WeChat Article Formatter - 文章格式化工具
 将 Markdown 文章转换为适合微信公众号的美化 HTML，一键生成专业排版。
 
 **核心特性：**
@@ -40,7 +53,7 @@
 
 ---
 
-### 3️⃣ WeChat Draft Publisher - 草稿发布工具
+### 4️⃣ WeChat Draft Publisher - 草稿发布工具
 自动将 HTML 格式的文章推送到微信公众号草稿箱。
 
 **核心特性：**
@@ -93,6 +106,9 @@ wechat_article_skills/
 ├── wechat-tech-writer/          # AI 写作助手
 │   ├── scripts/                 # 写作脚本
 │   ├── references/              # 参考资料
+├── wechat-product-manager-writer/ # AI 产品经理写作助手
+│   ├── scripts/                 # 绘图与生成脚本
+│   ├── references/              # 风格与封面指南
 │   └── SKILL.md
 │
 └── README.md                    # 本文件
@@ -154,6 +170,7 @@ wechat_article_skills/
 - [WeChat Article Formatter 完整指南](./wechat-article-formatter/README.md)
 - [WeChat Draft Publisher 使用说明](./wechat-draft-publisher/README.md)
 - [WeChat Tech Writer 技能文档](./wechat-tech-writer/SKILL.md)
+- [WeChat Product Manager Writer 技能文档](./wechat-product-manager-writer/SKILL.md)
 
 ### 参考资料
 - [微信公众平台帮助中心](https://kf.qq.com/product/weixinmp.html)
@@ -253,6 +270,13 @@ wechat_article_skills/
 
 ## 📝 更新日志
 
+### v2.0.0 (2026-01-16)
+- 🚀 新增 `WeChat Product Manager Writer` (AI 产品经理写作助手)
+- 🎨 支持强制生成内容结构图与专业封面
+- 📂 重构项目结构，支持四大核心功能
+- 🐛 修复了一些渲染问题
+- 🐛 修复了微信公众号兼容性问题
+
 ### v1.0.0 (2025-12-28)
 - ✅ 发布三个核心工具
 - ✅ 完善文档体系
@@ -288,11 +312,24 @@ MIT License - 供个人和商业使用
 
 ## 📖 Project Overview
 
-A powerful WeChat Official Account Skills toolkit, featuring **AI Writing Assistant**, **Article Formatting**, and **Draft Publishing**. Streamline your WeChat content creation workflow with efficiency.
+A powerful WeChat Official Account Skills toolkit, featuring **AI Writing Assistant (Tech/Product)**, **Article Formatting**, and **Draft Publishing**. Streamline your WeChat content creation workflow with four core tools.
 
 ## ✨ Core Tools
 
-### 1️⃣ WeChat Tech Writer - AI Writing Assistant
+### 1️⃣ WeChat Product Manager Writer - AI PM Assistant
+Write from an AI Product Manager's perspective. Covers product teardowns, scenario solutions, efficiency boosts, methodology, and industry trends.
+
+**Key Features:**
+- 🤖 Product-thinking driven writing
+- 📊 Mandatory infographics/structure maps
+- 🎨 Professional cover image generation
+- 🎯 Scenario-oriented practical insights
+
+[📚 Documentation](./wechat-product-manager-writer/SKILL.md)
+
+---
+
+### 2️⃣ WeChat Tech Writer - AI Writing Assistant
 AI-powered technical writing assistant for creating high-quality tech content.
 
 **Key Features:**
@@ -305,7 +342,7 @@ AI-powered technical writing assistant for creating high-quality tech content.
 
 ---
 
-### 2️⃣ WeChat Article Formatter
+### 3️⃣ WeChat Article Formatter
 Convert Markdown articles to beautifully formatted HTML optimized for WeChat Official Accounts.
 
 **Key Features:**
@@ -320,7 +357,7 @@ Convert Markdown articles to beautifully formatted HTML optimized for WeChat Off
 
 ---
 
-### 3️⃣ WeChat Draft Publisher
+### 4️⃣ WeChat Draft Publisher
 Automatically publish HTML articles to your WeChat Official Account draft box.
 
 **Key Features:**
@@ -374,6 +411,9 @@ wechat_article_skills/
 ├── wechat-tech-writer/          # AI writing assistant
 │   ├── scripts/                 # Writing scripts
 │   ├── references/              # Reference materials
+├── wechat-product-manager-writer/ # AI PM writing assistant
+│   ├── scripts/                 # Image generation scripts
+│   ├── references/              # Style & cover guides
 │   └── SKILL.md
 │
 └── README.md                    # This file
@@ -435,6 +475,7 @@ Create config file at `~/.wechat-publisher/config.json`:
 - [WeChat Article Formatter Complete Guide](./wechat-article-formatter/README.md)
 - [WeChat Draft Publisher User Guide](./wechat-draft-publisher/README.md)
 - [WeChat Tech Writer Skill Documentation](./wechat-tech-writer/SKILL.md)
+- [WeChat Product Manager Writer Skill Documentation](./wechat-product-manager-writer/SKILL.md)
 
 ### External Resources
 - [WeChat Official Accounts Help Center](https://kf.qq.com/product/weixinmp.html)
@@ -533,6 +574,13 @@ For more issues, check tool-specific documentation or submit an Issue.
 ---
 
 ## 📝 Changelog
+
+### v2.0.0 (2026-01-16)
+- 🚀 Added `WeChat Product Manager Writer` (AI PM perspective)
+- 🎨 Mandatory infographic and professional cover generation
+- 📂 Refactored structure to support four core tools
+- 🐛 Fixed rendering issues
+- 🐛 Fixed WeChat Official Account compatibility bugs
 
 ### v1.0.0 (2025-12-28)
 - ✅ Released three core tools
